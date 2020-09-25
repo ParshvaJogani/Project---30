@@ -40,6 +40,10 @@ function setup(){
 function draw(){
     background("white");
     Engine.update(engine);
+    
+    if(count === 0){
+    text("Game Over",400,200)
+    }
     //strokeWeight(4);
     box1.display();
     box2.display();
@@ -66,11 +70,11 @@ function mouseDragged(){
 
 function mouseReleased(){
     slingshot.fly();
+    count = count-1;
 }
 
 function keyPressed(){
     if(keyCode === 32){
     slingshot.attach(bird.body);
-    count = count-1;
     }
 }
